@@ -14,13 +14,7 @@
   <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
     <div class="container">
       <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-stack"
-          viewBox="0 0 16 16">
-          <path
-            d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z" />
-          <path
-            d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z" />
-        </svg>
+        
         <span class="ms-md-1 mt-1 fw-bolder me-md-5">CreaTuWeb</span>
       </a>
 
@@ -61,21 +55,22 @@
           <p class="lead mt-3">
             Estamos aquí para ayudarte a construir y mejorar tu presencia digital. Completa el formulario y nuestro equipo se pondrá en contacto contigo pronto.
           </p>
-          <form class="row mt-4">
+          <form class="row mt-4" action="send_email.php" method="POST">
             <div class="col-12 mb-3">
               <label for="contactName" class="form-label">Nombre</label>
-              <input type="text" class="form-control form-control-lg bg-gray-800 border-dark" id="contactName" placeholder="Ingresa tu nombre">
+              <input type="text" name="name" class="form-control form-control-lg bg-gray-800 border-dark" id="contactName" placeholder="Ingresa tu nombre" required>
             </div>
             <div class="col-12 mb-3">
               <label for="contactEmail" class="form-label">Correo Electrónico</label>
-              <input type="email" class="form-control form-control-lg bg-gray-800 border-dark" id="contactEmail" placeholder="Ingresa tu correo">
+              <input type="email" name="email" class="form-control form-control-lg bg-gray-800 border-dark" id="contactEmail" placeholder="Ingresa tu correo" required>
             </div>
             <div class="col-12 mb-3">
               <label for="contactMessage" class="form-label">Mensaje</label>
-              <textarea class="form-control form-control-lg bg-gray-800 border-dark" id="contactMessage" rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
+              <textarea name="message" class="form-control form-control-lg bg-gray-800 border-dark" id="contactMessage" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
             </div>
             <button type="submit" class="btn btn-white btn-xl mb-4">Enviar</button>
           </form>
+          
         </main>
       </div>
 
