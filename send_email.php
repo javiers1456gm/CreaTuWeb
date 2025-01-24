@@ -3,7 +3,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Cargar PHPMailer
-require 'vendor/autoload.php';
+require 'PHPMailer-master/autoload.php';
 
 // Validar que se envíen datos
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
