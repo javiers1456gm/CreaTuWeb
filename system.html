@@ -55,24 +55,44 @@
           <p class="lead mt-3">
             Estamos aquí para ayudarte a construir y mejorar tu presencia digital. Completa el formulario y nuestro equipo se pondrá en contacto contigo pronto.
           </p>
-          <form class="row mt-4" action="send_email.php" method="POST">
+          <form id="whatsappForm" onsubmit="sendWhatsAppMessage(event)">
             <div class="col-12 mb-3">
               <label for="contactName" class="form-label">Nombre</label>
-              <input type="text" name="name" class="form-control form-control-lg bg-gray-800 border-dark" id="contactName" placeholder="Ingresa tu nombre" required>
-            </div>
-            <div class="col-12 mb-3">
-              <label for="contactEmail" class="form-label">Correo Electrónico</label>
-              <input type="email" name="email" class="form-control form-control-lg bg-gray-800 border-dark" id="contactEmail" placeholder="Ingresa tu correo" required>
+              <input type="text" id="contactName" class="form-control form-control-lg bg-gray-800 border-dark" placeholder="Ingresa tu nombre" required>
             </div>
             <div class="col-12 mb-3">
               <label for="contactMessage" class="form-label">Mensaje</label>
-              <textarea name="message" class="form-control form-control-lg bg-gray-800 border-dark" id="contactMessage" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
+              <textarea id="contactMessage" class="form-control form-control-lg bg-gray-800 border-dark" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
             </div>
-            <button type="submit" class="btn btn-white btn-xl mb-4">Enviar</button>
+            <button type="submit" class="btn btn-white btn-xl mb-4">Enviar a WhatsApp</button>
           </form>
+          
           
         </main>
       </div>
+    
+
+      <script>
+        function sendWhatsAppMessage(event) {
+          event.preventDefault(); // Evita que el formulario recargue la página
+      
+          // Obtener los valores del formulario
+          const name = document.getElementById('contactName').value;
+          const message = document.getElementById('contactMessage').value;
+      
+          // Construir el mensaje para WhatsApp
+          const phoneNumber = '528441956798'; // Número de WhatsApp (incluye el código de país)
+          const text = `Hola, mi nombre es ${name}. ${message}`;
+      
+          // Codificar el mensaje para que sea compatible con URL
+          const encodedText = encodeURIComponent(text);
+      
+          // Redirigir al enlace de WhatsApp
+          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+          window.open(whatsappUrl, '_blank'); // Abrir en una nueva pestaña
+        }
+      </script>
+      
 
       <!-- Imagen o espacio decorativo -->
       <div class="col-12 col-md-5 col-lg-6 col-xl-7 gradient"></div>
