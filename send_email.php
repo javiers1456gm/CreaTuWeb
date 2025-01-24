@@ -16,6 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail = new PHPMailer(true);
     try {
         // Configuración del servidor SMTP de Gmail
+
+        $mail->SMTPDebug = 2;
+        $mail->Debugoutput = 'html';
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
